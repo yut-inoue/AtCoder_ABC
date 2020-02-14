@@ -1,14 +1,12 @@
 n=int(input())
 hl=list(map(int,input().split()))
+mx=0
 count=0
-temp_count=0
 for i in range(n-1):
     if hl[i]>=hl[i+1]:
-        temp_count+=1
+        count+=1
     else:
-        if count<temp_count:
-          count=temp_count
-        temp_count=0
-if count<temp_count:
-    count=temp_count
-print(count)
+        mx=max(mx,count)
+        count=0
+mx=max(mx,count)
+print(mx)
