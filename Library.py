@@ -64,6 +64,42 @@ def combinations_mod(n,k,mod):
         return 0
     return fac[n]*(finv[k]*finv[n-k]%mod)%mod
 #################################################
+#素因数分解した結果を2次元配列にして返す
+def prime_factorize(n):
+    n_origin=n+0
+    primelist=[]
+    a=2
+    while a*a<=n_origin:
+        if n%a!=0:
+            a+=1
+            continue
+        ex=0
+        while n%a==0:
+            ex+=1
+            n=n//a
+        primelist.append([a,ex])
+        a+=1
+    if n!=1:
+        primelist.append([n,1])
+    return primelist
+###################################################
+#オイラーのファイ関数
+#1~n の整数のうち，nと互いに素なものの個数を求める
+
+###################################################
+#約数を列挙するO(sqrt(n))
+def enum_divisors(n):
+    res=[]
+    i=1
+    while i*i<=n:
+        if n%i==0:
+            res.append(i)
+            if n//i!=i:
+                res.append(n//i)
+        i+=1
+    res.sort()
+    return res
+###################################################
 #bit全探索
 for i in range(2**n):
   b=bin(i)
