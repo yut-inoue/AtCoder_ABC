@@ -102,7 +102,20 @@ def enum_divisors(n):
 ###################################################
 #bit全探索
 for i in range(2**n):
-  b=bin(i)
-  for j in range(n):
-    if ((i >> j) & 1):#二進数iの下から数えてj桁目が1か否か
-        pass
+    b=bin(i)
+    for j in range(n):
+        if ((i >> j) & 1):#二進数iの下から数えてj桁目が1か否か
+            pass
+
+###################################################
+# 再帰関数のテンプレ DFS
+m=2
+def dfs(A):
+    if len(A)==3:
+        print(A)
+        return
+    for v in range(m):
+        A.append(v)
+        dfs(A)
+        A.pop()
+dfs([])
