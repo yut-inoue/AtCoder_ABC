@@ -120,3 +120,41 @@ def dfs(A):
         dfs(A)
         A.pop()
 dfs([])
+
+###################################################
+# 配列の二分探索
+def binary_search(A,key):
+    left=0
+    right=len(A)-1
+    while left<right:
+        mid=(left+right)//2
+        if A[mid]==key:
+            return mid
+        elif key<A[mid]:
+            right=mid
+        else:
+            left=mid+1
+    return False
+# bisectを使っても同じようにできる
+import bisect
+A=[1,2,3,4,5]
+key=1
+ind=bisect.bisect_left(A,key)
+if ind>len(A)-1:# もしkeyが配列の最大値よりも大きいなら
+    print("not found")
+elif A[ind]==key:
+    print("found")
+else:
+    print("not found")
+
+# 正整数nに対して単調増加の関数の二分探索
+# f(n)<x となる最大のnを返す
+left=0;right=10**9+1
+while right-left>1:
+    mid=(left+right)//2
+    if f(mid)>x:
+        right=mid
+    else:
+        left=mid
+# 最終的にleftが答え
+
