@@ -148,7 +148,8 @@ else:
     print("not found")
 
 # 正整数nに対して単調増加の関数の二分探索
-# f(n)<x となる最大のnを返す
+# f(n)<=x となる最大のnを返す
+# 二分探索は，f(n)>=xとなる最小のnを求める際にも適用できる
 left=0;right=10**9+1
 while right-left>1:
     mid=(left+right)//2
