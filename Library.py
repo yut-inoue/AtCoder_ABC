@@ -159,3 +159,13 @@ while right-left>1:
         left=mid
 # 最終的にleftが答え
 
+############################################
+# 入力vをaで何回割り切れるか
+def div2(v,a):
+    res=0
+    if v==0:
+        return res
+    while v%a==0:
+        v=v//a
+        res+=1
+    return res
