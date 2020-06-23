@@ -169,3 +169,14 @@ def div2(v,a):
         v=v//a
         res+=1
     return res
+
+############################################
+# 10-baseの整数vをn進数で表す．
+def n_base_digit(v,n):
+    res=[]
+    while v!=0:
+        c=v%n
+        res.append(c)
+        v=v//n
+    res=res[::-1]
+    return int(''.join(map(str,res)))
