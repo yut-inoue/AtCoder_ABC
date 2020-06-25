@@ -14,6 +14,7 @@ for i in range(q):
     b_num=dic.get(b,0)
     total=total+b_num*(c-b)
     ansl.append(total)
+    dic[b]=0
     dic[c]=dic.get(c,0)+b_num
 
 for ans in ansl:
