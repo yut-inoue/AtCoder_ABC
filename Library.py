@@ -46,7 +46,7 @@ def facmod(a,mod):
 def modinv(a,mod):
     return modpow(a,mod-2,mod)
 ###############################################
-#nCkをmodで割ったあまり
+#nCkをmodで割ったあまり note: k=0なら1を返すように場合分けが必要
 #テーブルを作る前処理
 mod=10**9+7
 fac=[0,1]
