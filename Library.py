@@ -180,3 +180,6 @@ def n_base_digit(v,n):
         v=v//n
     res=res[::-1]
     return int(''.join(map(str,res)))
+
+############################################
+# 自然数 n の10進数表記の桁和を返す関数
