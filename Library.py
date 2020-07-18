@@ -25,6 +25,16 @@ def combinations_with_replacement_count(n, r):
     #重複組み合わせn個から重複を許してr個選ぶ
     return combinations_count(n + r - 1, r)
 ################################################
+#列挙して返すitertools
+import itertools
+l=["a","b","c","d"]
+p = itertools.permutations(l, r)
+for v in itertools.permutations(l, r):
+    #tupleで返ってくる
+c=itertools.combinations(l,k)
+for v in itertools.combinations(l,k):
+    #tupleで返ってくる
+################################################
 #a^nをmodでわったあまり 二分累乗法O(logn)
 def modpow(a,n,mod):
     res=1
