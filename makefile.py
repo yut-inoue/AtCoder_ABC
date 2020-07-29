@@ -1,8 +1,8 @@
 import os
 # n=input()
-n="079"
+n="076"
 contest_name="ABC"+n
-rank_list=['A','B','C','D']
+rank_list=['A','B','C']
 os.makedirs(contest_name,exist_ok=False)
 for rank in rank_list:
     pyfile="{0}_{1}.py".format(contest_name,rank)
