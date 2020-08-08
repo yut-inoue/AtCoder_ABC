@@ -42,11 +42,12 @@ for v in itertools.permutations(l, r):
 c = itertools.combinations(l, k)
 for v in itertools.combinations(l, k):
     # tupleで返ってくる
-    ################################################
-    # a^nをmodでわったあまり 二分累乗法O(logn)
-
+    
+################################################
+    
 
 def modpow(a, n, mod):
+# a^nをmodでわったあまり 二分累乗法O(logn)
     res = 1
     while n > 0:
         if n & 1:
