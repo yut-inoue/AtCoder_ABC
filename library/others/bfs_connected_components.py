@@ -15,7 +15,7 @@ d = [-1 for i in range(n+1)]  # 頂点1からの距離を格納するリスト
 color = [NIL for i in range(n+1)]  # 未到達かを示すリスト
 
 
-def bfs(start_node, color_id):  # uは探索の開始点
+def bfs(start_node, color_id):  # start_nodeは探索の開始点
     global color, d
     q = deque([start_node])
     d[start_node] = 0
