@@ -1,18 +1,26 @@
-n=int(input())
-al=list(map(int,input().split()))
+n = int(input())
 
-dic={}
-for v in al:
-    if not v in dic.keys():
-        dic[v]=1
-    else:
-        dic[v]=dic[v]+1
-count_l=[]
-for v in range(min(al)-1,max(al)+2):
-    count=0
-    count=dic.get(v-1,0)+dic.get(v,0)+dic.get(v+1,0)
-    count_l.append(count)
-print(max(count_l))
+xl = [0]*n
+yl = [0]*n
+hl = [0]*n
 
 
+for i in range(n):
+    xl[i], yl[i], hl[i] = map(int, input().split())
+    if hl[i] >= 1:
+        si = i
 
+ansx, ansy, ansh = -1, -1, -1
+
+for cx in range(101):
+    for cy in range(101):
+        H = hl[si]+abs(xl[si]-cx)+abs(yl[si]-cy)
+        flag = True
+        for i in range(n):
+            hi = max(H-abs(xl[i]-cx)-abs(yl[i]-cy), 0)
+            if hi != hl[i]:
+                flag = False
+                break
+        if flag:
+            ansx, ansy, ansh = cx, cy, H
+print(ansx, ansy, ansh)
