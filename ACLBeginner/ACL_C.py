@@ -1,4 +1,7 @@
-# 幅優先探索で連結成分を求めるプログラム
+#n = int(input())
+#a, b = map(int,input().split())
+#l = list(map(int,input().split()))
+#l = [list(map(int,input().split())) for i in range(n)]
 from collections import deque
 # n = int(input())# ノードの数
 n, m = map(int, input().split())
@@ -6,9 +9,9 @@ n, m = map(int, input().split())
 # 隣接リストで格納する
 adjl = [[] for _ in range(n+1)]
 for i in range(m):  # 隣接関係を受け取る
-    s, t = map(int, input().split())
-    adjl[s].append(t)
-    adjl[t].append(s)
+    a, b = map(int, input().split())
+    adjl[a].append(b)
+    adjl[b].append(a)
 
 NIL = -1  # 未発見を示す値
 d = [-1 for i in range(n+1)]  # 頂点1からの距離を格納するリスト
@@ -35,11 +38,8 @@ for u in range(1, n+1):  # node全てからスタートする
         color_id += 1
         bfs(u, color_id)
 
-# print(color)
-q = int(input())
-for i in range(q):
-    s, t = map(int, input().split())
-    if color[s] == color[t]:
-        print('yes')
-    else:
-        print('no')
+colordic = {}
+for u in range(1, n+1):
+    colordic[color[u]] = True
+
+print(len(colordic)-1)
