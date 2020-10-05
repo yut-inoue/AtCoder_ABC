@@ -42,12 +42,12 @@ for v in itertools.permutations(l, r):
 c = itertools.combinations(l, k)
 for v in itertools.combinations(l, k):
     # tupleで返ってくる
-    
-################################################
-    
+
+    ################################################
+
 
 def modpow(a, n, mod):
-# a^nをmodでわったあまり 二分累乗法O(logn)
+    # a^nをmodでわったあまり 二分累乗法O(logn)
     res = 1
     while n > 0:
         if n & 1:
@@ -228,6 +228,16 @@ def n_base_digit(v, n):
     res = res[::-1]
     return int(''.join(map(str, res)))
 
+############################################
+
+
+def n_base_digit_sum(v, a):
+    # 10baseの自然数vをn進数で表した時の桁和
+    res = 0
+    while v != 0:
+        res += v % a
+        v = v//a
+    return res
 ############################################
 # 自然数 n の10進数表記の桁和を返す関数
 
