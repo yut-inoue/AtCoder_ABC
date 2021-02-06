@@ -1,6 +1,6 @@
 import os
 # n=input()
-n = "188"
+n = "053"
 contest_name = "ABC"+n
 rank_list = ['A', 'B', 'C']
 os.makedirs(contest_name, exist_ok=False)

@@ -166,7 +166,7 @@ dfs([])
 
 def binary_search(A, key):
     left = 0
-    right = len(A)-1
+    right = len(A)
     while left < right:
         mid = (left+right)//2
         if A[mid] == key:
